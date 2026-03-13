@@ -8,6 +8,8 @@ function App() {
       <div style={{ 
         minHeight: '100vh', 
         width: '100vw',
+        display:'flex',
+        flexDirection: 'column',
         background: 'radial-gradient(circle at top, #ebdfb4 0%, #ccab7d 55%, #f1b4b5 100%)'
         }}>
         <Routes>
