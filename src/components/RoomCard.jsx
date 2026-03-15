@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import useIsMobile from "../hooks/useIsMobile";
 
 const IMAGE_PATHS = [
     '/standard-room.jpg',
@@ -7,6 +8,7 @@ const IMAGE_PATHS = [
 ];
 
 function RoomCard({ roomType, imageIndex }) {
+    const isMobile=useIsMobile();
     const navigate = useNavigate();
 
     return (
@@ -14,7 +16,7 @@ function RoomCard({ roomType, imageIndex }) {
         style={{
             position: 'relative',
             height: '225px',
-            width:'25vw',
+            width:isMobile? '80vw':'25vw',
             borderRadius: '20px',
             backgroundImage: `url(${IMAGE_PATHS[imageIndex % IMAGE_PATHS.length]})`,
             backgroundSize: 'cover',

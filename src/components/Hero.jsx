@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import useIsMobile from '../hooks/useIsMobile';
+import isMobile from "../hooks/useIsMobile";
 
 function Hero(){
+    const isMobile=useIsMobile();
 
     return(
         <header className="hero" style={{
@@ -10,27 +13,11 @@ function Hero(){
             justifyContent: 'space-evenly',
             alignItems: 'flex-start'
         }}>
-            
-            <hgroup className="logo-group" 
-            style={{
-                display: 'flex',
-                flexDirection:'row',
-                padding:'10px'
-            }}
-            >
-                <Link to="/" rel="home" className="hotel-logo">
-                    <img src="logo.png" alt="Meridian Sands Logo" style={{height: '60px'}}/>
-                </Link>
-                <h1 className="company-name" style={{
-                    fontSize: '0.8rem', 
-                    margin: 0,
-                    fontWeight: 'lighter'
-                }}>Meridian Sands</h1>
-            </hgroup>
             <div
                 style={{
+                    position:'relative',
                     width: '100vw',
-                    height: '65vh',
+                    height: isMobile? '96vh':'65vh',
                     backgroundImage: "url('/hotel-view.jpg')",
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -38,14 +25,27 @@ function Hero(){
 
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',//vertical
+                    justifyContent: isMobile? 'start': 'center',//vertical
                     alignItems: 'center', //horizontal
                     textAlign: 'center'
-                }}>
+                }}>       
+                    {/*gradient fade to bg color*/}
+                    <div style={{
+                    position:'absolute',
+                    bottom:0,
+                    left:0,
+                    right:0,
+                    height:isMobile?'150px':'100px',
+                    background:'linear-gradient(to bottom, transparent, #bdac92)',
+                    pointerEvents:'none',
+                    zIndex:1
+                    }}></div>
                     <h2 style={{
-                        fontSize: '4rem', 
+                        fontSize: isMobile?'2.5rem':'4rem', 
                         margin:0,
-                        color: '#2c200e'
+                        fontWeight:'inherit',
+                        color: '#2c200e',
+                        marginTop:isMobile?'75px':'-100px'
                     }}>
                         Your horizon, defined
                     </h2>
