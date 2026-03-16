@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Booking from './pages/Booking';
 import Navbar from './components/Navbar';
 import Help from './pages/Help';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/help" element={<Help/>}/>
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );
