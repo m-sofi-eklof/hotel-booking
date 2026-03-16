@@ -1,5 +1,6 @@
 import BookingForm from "../components/BookingForm";
 import useIsMobile from "../hooks/useIsMobile";
+import birdsEye from '/birds-eye-view.jpg';
 
 function Booking(){
   const isMobile=useIsMobile();
@@ -10,7 +11,7 @@ function Booking(){
         width: '100vw',
         height:'96vh',
         position:'relative',
-        backgroundImage: "url('./birds-eye-view.jpg')",
+        backgroundImage: `url(${birdsEye})`,
         backgroundSize: 'cover',
         overflow:'hidden',
         backgroundPosition: 'center',

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import useIsMobile from '../hooks/useIsMobile';
 import isMobile from "../hooks/useIsMobile";
+import hotelView from '/hotel-view.jpg';
 
 function Hero(){
     const isMobile=useIsMobile();
@@ -18,7 +19,7 @@ function Hero(){
                     position:'relative',
                     width: '100vw',
                     height: isMobile? '96vh':'65vh',
-                    backgroundImage: "url('./hotel-view.jpg')",
+                    backgroundImage: `url(${hotelView})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
