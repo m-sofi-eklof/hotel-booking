@@ -47,7 +47,7 @@ function BookingForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newErrors=validate();
-        if(Object.keys(newErrors).lenght>0){
+        if(Object.keys(newErrors).length>0){
           setErrors(newErrors);
           return;
         }
@@ -60,7 +60,7 @@ function BookingForm() {
     };
 
     const nights= formData.checkIn&&formData.checkOut ?
-    Math.max(0(newDate(formData.checkOut)-new Date(formData.checkIn))/(1000*60*60*24))
+    Math.max(0, (new Date(formData.checkOut) - new Date(formData.checkIn)) / (1000 * 60 * 60 * 24))
     :0;
     const total =nights*(PRICES[formData.roomType]||0);
     if (confirmed) {

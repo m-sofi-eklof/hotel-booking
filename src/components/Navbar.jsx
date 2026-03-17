@@ -11,7 +11,8 @@ function Navbar() {
             style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.75rem'
+                gap: '0.75rem',
+                borderBottom: '1.5px solid rgba(0,0,0,0.1)'
             }}
         >
             <div
