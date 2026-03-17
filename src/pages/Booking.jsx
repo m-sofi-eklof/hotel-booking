@@ -40,7 +40,7 @@ function Booking() {
                 position: 'relative',
                 zIndex: 2,
                 maxWidth: '85%',
-                marginTop: isMobile ? '-700px' : '-600px',
+                marginTop: isMobile ? '-600px' : '-500px',
                 marginLeft: 'auto',
                 marginRight: 'auto'
             }}>
